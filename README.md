@@ -192,20 +192,6 @@ Outcome:
 The user that is currently logged in will be removed from the group that they chose to unsubscribe from.
 
 
-About:
-
-This is a multipurpose system that was designed by Group 13 as a part of the final assessment for Object Oriented Design course for Spring 2020. The system is called “MOVID-19”. The inspiration behind the name comes from the consequence of the real life social distancing orders by governments all around the world. This has left people without a lot of ways to get together with friends and family and enjoy with each other. Since a lot of people cannot go out of their homes and gather to do socially fun activities like watching movies in theaters, this system serves as the bridge between people deciding on a movie, voting for their choices and watching the winning movie together with each other online. 
-
-The system revolves around the voting system that allows members to popularly select the movies that everyone will watch as a group online, mimicking a real life meeting at a theater and watching a movie together.
-
-People will become a part of a group that will consist of their friends and family members and will vote on which movie to watch on the website, rather than meeting together in real life and then deciding which movie to watch. This system will bring movies that are currently popular and in demand and people will be able to vote for the movies that they want to watch with everyone. Members of a group will also be able to watch the trailers and read reviews of all the movies that are available for their group, which will help them make their choice. Members will also be able to modify their vote after initially voting if they choose to. After a movie wins the voting round, that movie can be watched at any of the other popular movie platforms like Netflix, Prime Videos, Apple TV and more.
-
-Everything is controlled by a moderator which has the power to virtually do anything that they feel is necessary to keep the website working seamlessly. This includes the ability to invite people, add them as members in a group. Creating voting events which will end with a winning movie that the members of that group will watch. Moderator will also be able to populate the movies from the system.
-
-Members will have the ability to see all the movies that are available currently and vote for them as soon as a movie watching event is created for their group. They will also be able to manage their profile and do basic functions like watch movie trailers and read movie reviews for the movies that they are interested in.
-
-
-
 
 
 
