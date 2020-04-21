@@ -1,4 +1,12 @@
+
+
 # MOVID19
+
+
+LINK TO THE PROJECT VIDEO
+
+https://drive.google.com/open?id=1NQ_29oJO0p-Clx0G_1fVIXongLWomSxN
+
 About
 This is a multipurpose system that was designed by Group 13 as a part of the final assessment for Object 
 Oriented Design course for Spring 2020. The system is called “MOVID-19”. The inspiration behind the name 
