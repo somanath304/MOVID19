@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  /* background-color: #4CAF50; */
+  /* background-color: #8080ff; */
+  background-image: url('/background.jpg');
+  color: black;
+}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  /* background-color: #4CAF50; */
+  background-image: url('/background.jpg');
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049; 
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.new{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+</style>
+</head>
+<body>
+  <center><h2>Group Details</h2></center>
+  <table id="customers">
+        <thead>
+          <tr>
+            <th>Group ID</th>
+            <th>Group Name</th>
+            <th>Group state</th>
+            <th>create date</th>
+            <th>close date</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <%if (mwgroup.length >0){ %>
+          <% mwgroup.forEach(function(row){ %>
+          <tr>
+            <td><%= row.mwgroupid %></td>
+            <td><%= row.mwgroupname %></td>
+            <td><%= row.state %></td>
+            <td><%= row.createdate %></td>
+            <td><%= row.closeddate %></td>
+
+            
+          </tr>
+          <% })}else{ %>
+            <tr>
+                <td colspan="6">No Record Found</td>
+                
+              </tr>
+            <% } %>
+        </tbody>
+      </table>
+      <br>
+      <center><h2>User details</h2></center>
+       <table id="customers">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email ID</th>
+            <th>MemberID</th>
+            
+
+          </tr>
+        </thead>
+        <tbody>
+          <%if (Users.length >0){ %>
+          <% Users.forEach(function(row){ %>
+          <tr>
+            <td><%= row.firstname %></td>
+            <td><%= row.lastname %></td>
+            <td><%= row.email %></td>
+            <td><%= row.memberid %></td>
+            
+          </tr>
+          <% })}else{ %>
+            <tr>
+                <td colspan="6">No Record Found</td>
+                
+              </tr>
+            <% } %>
+        </tbody>
+      </table>
+      <br>
+      <div>
+        <center><h2>Add Members to Group</h2></center>
+  <form action="/Add_Member" method="POST">
+    <label for="MemberID">MemberID</label>
+    <input type="text" id="MemberID" name="MemberID" placeholder="Member ID">
+
+    <label for="GroupID">GroupID</label>
+    <input type="text" id="group_id" name="group_id" placeholder="Group ID">
+
+    <input type="submit" value="Add Member To Group">
+  </form>
+</div>
+    </body>
+    </html>
+    

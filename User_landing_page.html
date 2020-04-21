@@ -1,0 +1,283 @@
+<!-- <h2>Vote for Event</h2>
+  <form action="/Vote_event" method="POST" >
+    <label for="Vote event">Vote for Movie</label><br><br>
+    <input type="submit" value="Vote_event" >
+    <br>
+    
+  </form> 
+
+  <h2>Modify Vote</h2>
+  <form action="/modify_vote" method="POST" >
+    <label for="Modify Vote">Modify Vote</label><br><br>
+    <input type="submit" value="modify_vote" >
+    
+  </form> 
+  <form action="/unsubscribe" method="POST" >
+    <label for="Logout">Unsubscribe</label><br><br>
+    <input type="submit" value="Unsubscribe" >
+    <br>
+    
+  </form> 
+
+  <h2>Logout</h2>
+  <form action="/log_out" method="POST" >
+    <label for="Logout">Logout</label><br><br>
+    <input type="submit" value="Logout" >
+    <br>
+    
+  </form>  -->
+
+
+  <!DOCTYPE html>
+  <html>
+  <title>Home Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/Home.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+  input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: rgb(76, 130, 175);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #447fcc;
+}
+
+#myHeader {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+  </style>
+  <body class="home-light-bluish home-content home-background" style="max-width:1600px" background="/background.jpg">
+  
+  <!-- Sidebar/menu -->
+  <nav class="home-sidebar home-collapse home-custom home-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+    <div class="home-container"> 
+      <a href="#" onclick="home_close()" class="home-hide-large home-right home-jumbo home-padding home-hover-grey" title="close menu">
+        <i class="fa fa-remove"></i>
+      </a>
+      <img src="/man.png" style="width:45%;" class="home-round"><br><br>
+      <h4><b>Profile</b></h4>
+      <p class="home-text-grey"></p>
+    </div>
+    <div class="home-bar-block">
+      
+      <a href="/About" onclick="home_close()" class="home-bar-item home-button home-padding"><i class="fa fa-home fa-fw home-margin-right"></i>About</a> 
+      <a href="/contact_us" onclick="home_close()" class="home-bar-item home-button home-padding"><i class="fa fa-envelope fa-fw home-margin-right"></i>Contact Us</a>
+  </div>
+  </nav>
+  
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="home-overlay home-hide-large home-animate-opacity" onclick="home_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+  
+  <!-- !PAGE CONTENT! -->
+  <div class="home-main" style="margin-left:300px">
+  
+    <!-- Header -->
+    <header id="portfolio">
+      <a href="#"><img src="/Profile.png" style="width:65px;" class="home-circle home-right home-margin home-hide-large home-hover-opacity"></a>
+      <span class="home-button home-hide-large home-xxlarge home-hover-text-grey" onclick="home_open()"><i class="fa fa-bars"></i></span>
+      <div class="home-container">
+      <h1><b>Home</b></h1>
+      <div class="home-section home-bottombar home-padding-16">
+        <span class="home-margin-right"></span> 
+        <button class="home-button home-white"> 
+          <form action="/Vote_event" method="POST" >
+          <input type="submit" value="Vote">
+
+        </form> </button>
+        <button class="home-button home-white"> 
+          <form action="/modify_vote" method="POST" >
+          <input type="submit" value="Modify Vote">
+          
+
+        </form> </button>
+        <button class="home-button home-white ">
+          <form action="/unsubscribe" method="POST" >
+            <input type="submit" value="Unsubscribe">
+          </form> 
+        </button>
+
+
+
+        <button class="home-button home-white"> 
+          <form action="/log_out" method="POST" >
+          <input type="submit" value="Logout">
+          </form>
+        </button>
+
+
+
+      </div>
+      </div>
+    </header>
+    
+    <!-- First Photo Grid-->
+    <div class="home-row-padding">
+      <div class="home-third home-container home-margin-bottom">
+        <img src="/1.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+        <div class="home-container home-white">
+          <p><b>Star Wars 8</b></p>
+    <a href="#"><img src="/Profile.png" style="width:65px;" class="home-circle home-right home-margin home-hide-large home-hover-opacity"></a>
+          <p><b><a href="https://www.youtube.com/watch?v=8Qn_spdM5Zg" target="_blank">Trailer</a></b></p>
+          <p><b><a href="https://www.themoviedb.org/review/5dfed8b465686e0013949278"target="_blank">Review</a></b></p>
+        </div>
+      </div>
+      <div class="home-third home-container home-margin-bottom">
+          <img src="/2.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+          <div class="home-container home-white">
+            <p><b>John Wick 3</b></p>
+            <p><b><a href="https://www.youtube.com/watch?v=pU8-7BX9uxs"target="_blank">Trailer</a></b></p>
+            <p><b><a href="https://www.themoviedb.org/review/5d871477336e010029163b2d"target="_blank">Review</a></b></p>
+          </div>
+        </div>
+        <div class="home-third home-container home-margin-bottom">
+          <img src="/3.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+          <div class="home-container home-white">
+            <p><b>Avengers Infinity War</b></p>
+            <p><b><a href="https://www.youtube.com/watch?v=6ZfuNTqbHE8" target="_blank">Trailer</a></b></p>
+            <p><b><a href="https://www.themoviedb.org/review/5ae02e1e0e0a26156900f6da" target="_blank">Review</a></b></p>
+          </div>
+        </div>
+    </div>
+    
+    <!-- Second Photo Grid-->
+    <div class="home-row-padding">
+      <div class="home-third home-container home-margin-bottom">
+          <img src="/4.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+          <div class="home-container home-white">
+            <p><b>Frozen 3</b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Trailer</a></b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Review</a></b></p>
+          </div>
+        </div>
+        <div class="home-third home-container home-margin-bottom">
+            <img src="/5.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+            <div class="home-container home-white">
+              <p><b>Jurassic World</b></p>
+              <p><b><a href="https://www.google.com" target="_blank">Trailer</a></b></p>
+             <p><b><a href="https://www.google.com" target="_blank">Review</a></b></p>
+            </div>
+          </div>
+          <div class="home-third home-container home-margin-bottom">
+            <img src="/6.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+            <div class="home-container home-white">
+              <p><b>Ad Astra</b></p>
+              <p><b><a href="https://www.google.com" target="_blank">Trailer</a></b></p>
+              <p><b><a href="https://www.google.com" target="_blank">Review</a></b></p>
+            </div>
+      </div>
+    </div>
+  
+    <!-- Third Photo Grid-->
+    <div class="home-row-padding">
+      <div class="home-third home-container home-margin-bottom">
+          <img src="/7.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+          <div class="home-container home-white">
+            <p><b>Lion King</b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Trailer</a></b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Review</a></b></p>
+          </div>
+        </div>
+        <div class="home-third home-container home-margin-bottom">
+            <img src="/8.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+            <div class="home-container home-white">
+              <p><b>Birds Of Prey</b></p>
+              <p><b><a href="https://www.google.com" target="_blank">Trailer</a></b></p>
+             <p><b><a href="https://www.google.com" target="_blank">Review</a></b></p>
+            </div>
+          </div>
+          <div class="home-third home-container home-margin-bottom">
+            <img src="/9.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+            <div class="home-container home-white">
+              <p><b>Onward</b></p>
+              <p><b><a href="https://www.google.com" target="_blank">Trailer</a></b></p>
+              <p><b><a href="https://www.google.com" target="_blank">Review</a></b></p>
+            </div>
+      </div>
+    </div>
+  
+  
+    <!-- Photo Grid-->
+    <div class="home-row-padding">
+      <div class="home-third home-container home-margin-bottom">
+          <img src="/10.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+          <div class="home-container home-white">
+            <p><b>Movie Name</b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Trailer</a></b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Review</a></b></p>
+          </div>
+        </div>
+        <div class="home-third home-container home-margin-bottom">
+            <img src="/11.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+            <div class="home-container home-white">
+              <p><b>Movie Name</b></p>
+              <p><b><a href="https://www.google.com" target="_blank">Trailer</a></b></p>
+             <p><b><a href="https://www.google.com" target="_blank">Review</a></b></p>
+            </div>
+          </div>
+          <div class="home-third home-container home-margin-bottom">
+            <img src="/12.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+            <div class="home-container home-white">
+              <p><b>Movie Name</b></p>
+              <p><b><a href="https://www.google.com" target="_blank">Trailer</a></b></p>
+              <p><b><a href="https://www.google.com" target="_blank">Review</a></b></p>
+            </div>
+      </div>
+    </div>
+  
+    <!-- Photo Grid-->
+    <div class="home-row-padding">
+      <div class="home-third home-container home-margin-bottom">
+          <img src="/13.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+          <div class="home-container home-white">
+            <p><b>Movie Name</b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Trailer</a></b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Review</a></b></p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  
+ 
+  <!-- End page content -->
+  </div>
+  
+  <script>
+  // Script to open and close sidebar
+  function home_open() {
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function home_close() {
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("myOverlay").style.display = "none";
+  }
+  </script>
+  
+  </body>
+  </html>

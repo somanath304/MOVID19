@@ -1,0 +1,544 @@
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+<h2>Member info</h2>
+
+<form action="/members" method="POST" >
+  <label for="email">Email</label><br><br>
+  <input type="text" id="email" name="email" value="email"><br>
+  <br>
+  <input type="submit" value="Invite" >
+</form> 
+
+<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+
+<h2>Create group</h2><br>
+<form action="/cg" method="POST" >
+    <label for="fname">GroupName</label><br>
+    <input type="text" id="GroupName" name="GroupName" value="GroupName"><br><br>
+    <label for="birthday">Creation date</label><br><br>
+    <input type="date" id="birthday" name="birthday"><br>
+    
+    <br>
+    <input type="submit" value="Create Group" >
+  </form> 
+  
+  <h2>Show groups and Add user</h2><br>
+  <form action="/Manage_group" method="POST" >
+    <label for="Manage_group">Manage Group</label><br><br>
+    <input type="submit" value="Manage Groups" >
+    <br>
+    
+  </form> 
+<br>
+
+<h2>Create Event</h2><br>
+  <form action="/Create_Event" method="POST" >
+    <label for="fname">Event Name</label><br>
+    <input type="text" id="mweventname" name="mweventname" value="mweventname"><br><br>
+    <label for="birthday"> Open Vote Date</label><br><br>
+    <input type="date" id="openvotedate" name="openvotedate"><br>
+    <label for="birthday">Open Close date</label><br><br>
+    <input type="date" id="closevotedate" name="closevotedate"><br>
+    <label for="birthday">Movie Date</label><br><br>
+    <input type="date" id="moviedate" name="moviedate"><br>
+    <label for="birthday">Movie Event Date</label><br><br>
+    <input type="date" id="mweventdate" name="mweventdate"><br>
+
+    <label for="fname">MW Group ID</label><br>
+    <input type="text" id="mwgroupid" name="mwgroupid" value="mwgroupid"><br><br>
+
+    <br>
+    <input type="submit" value="Create Event" >
+    <br>
+    
+  </form> 
+  <br>
+  <h2>Populate Movies</h2>
+  <form action="/Populate_movies" method="POST" >
+    <label for="Populate_movies">Populate Movies From API</label><br><br>
+    <input type="submit" value="Populate Movies" >
+    <br>
+    
+  </form> 
+
+  <h2>Winner Display</h2>
+  <form action="/Winner" method="POST" >
+    <label for="Winner">Winner Display</label><br><br>
+    <input type="submit" value="Winner Display" >
+    <br>
+    
+  </form> 
+
+<br>
+<div>
+  <a href="/login"> Click here to login</a>
+</div>
+
+<h2>Logout</h2>
+<form action="/log_out" method="POST" >
+  <label for="Logout">Logout</label><br><br>
+  <input type="submit" value="Logout" >
+  <br>
+  
+</form> 
+
+
+
+</body>
+</html>
+
+-->
+
+<!DOCTYPE html>
+<html>
+<title>Home Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/Home.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: rgb(76, 130, 175);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #447fcc;
+}
+
+#myHeader {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body class="home-light-bluish home-content home-background" style="max-width:1600px" background="/background.jpg">
+
+<!-- Sidebar/menu -->
+<nav class="home-sidebar home-collapse home-custom home-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="home-container"> 
+    <a href="#" onclick="home_close()" class="home-hide-large home-right home-jumbo home-padding home-hover-grey" title="close menu">
+      <i class="fa fa-remove"></i>
+    </a>
+    <img src="/me.jpg" style="width:60%;" class="home-round"><br><br>
+    <h4><b>Profile</b></h4>
+    <p class="home-text-grey"></p>
+  </div>
+  <div class="home-bar-block">
+    
+    <a href="/About" onclick="home_close()" class="home-bar-item home-button home-padding"><i class="fa fa-home fa-fw home-margin-right"></i>About</a> 
+    <a href="/contact_us" onclick="home_close()" class="home-bar-item home-button home-padding"><i class="fa fa-envelope fa-fw home-margin-right"></i>Contact Us</a>
+</div>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="home-overlay home-hide-large home-animate-opacity" onclick="home_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="home-main" style="margin-left:300px">
+
+  <!-- Header -->
+  <header id="portfolio">
+    <a href="#"><img src="/Profile.png" style="width:65px;" class="home-circle home-right home-margin home-hide-large home-hover-opacity"></a>
+    <span class="home-button home-hide-large home-xxlarge home-hover-text-grey" onclick="home_open()"><i class="fa fa-bars"></i></span>
+    <div class="home-container">
+    <h1><b>Home</b></h1>
+    <div class="home-section home-bottombar home-padding-16">
+      <span class="home-margin-right"></span> 
+      <button class="home-button home-white"> 
+        <form action="/About" method="GET" >
+        <input type="submit" value="About">
+
+      </form> </button>
+      <button class="home-button home-white"> 
+        <form action="/contact_us" method="GET" >
+        <input type="submit" value="Contact US">
+        
+
+      </form> </button>
+ 
+
+
+      <button class="home-button home-white"> 
+        <form action="/log_out" method="POST" >
+        <input type="submit" value="Logout">
+        </form>
+      </button>
+
+
+
+    </div>
+    </div>
+  </header>
+  
+  <!-- First Photo Grid-->
+  <div class="home-row-padding" >
+    <div class="home-third home-container home-margin-bottom" style="margin-left:100px">
+      <img src="/email.png" alt="Norway" style="width:100%" class="home-hover-opacity">
+      <div class="home-container home-white">
+        <br>
+        <form action="/members" method="POST" >
+          <label for="email">Email</label><br><br>
+          <input type="text" id="email" name="email" value="email"><br>
+          <br>
+          <input type="submit" value="Invite" >
+          <br>
+        </form> 
+        <br>
+        <br>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <b><h3><p>Invite user: Invite()</p><br></h3></b>
+    <b><p>Description: 
+
+      This section is designed for enabling the moderator to invite new people to the website to signup on the website’s signup page.
+      <br><br>
+      Procedure: <br>
+      1. Moderator will enter an email of the user that they want to invite to join the website.<br><br>
+      2. Moderator will click the “Invite” button to submit the email.<br><br>
+      3. The website will send a pre-formatted email to the email that was provided by the moderator.<br><br>
+      4. Email recipients will click on the website link to land on the signup page.<br><br>
+      5. The user will add their information like “First Name”, “Last Name”, “Email” and a “Password” and their information will be registered in the DB.<br><br>
+      6. The user can then go on the Login page to input their information and login.<br><br>
+      <br>
+      Outcome: <br>
+      The user is invited to the website and after putting their information, they should be able to login.<br>
+      </p></b>
+    <!-- <div class="home-third home-container home-margin-bottom">
+        <img src="/2.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+        <div class="home-container home-white">
+          <p><b>Movie Name</b></p>
+          <p><b><a href="https://www.google.com"target="_blank">Trailer</a></b></p>
+          <p><b><a href="https://www.google.com"target="_blank">Review</a></b></p>
+        </div>
+      </div> -->
+      <!-- <div class="home-third home-container home-margin-bottom">
+        <img src="/3.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+        <div class="home-container home-white">
+          <p><b>Movie Name</b></p>
+          <p><b><a href="https://www.google.com" target="_blank">Trailer</a></b></p>
+          <p><b><a href="https://www.google.com" target="_blank">Review</a></b></p>
+        </div>
+      </div> -->
+  </div>
+  
+  <!-- Second Photo Grid-->
+  <div class="home-row-padding">
+    <div class="home-third home-container home-margin-bottom" style="margin-left:100px">
+      <img src="/ create_group.png" alt="Norway" style="width:100%" class="home-hover-opacity">
+      <div class="home-container home-white">
+        <br>
+        <form action="/cg" method="POST" >
+          <label for="fname">GroupName</label><br>
+          <input type="text" id="GroupName" name="GroupName" value="GroupName"><br><br>
+          <label for="birthday">Creation date</label><br><br>
+          <input type="date" id="birthday" name="birthday"><br>
+          
+          <br>
+          <input type="submit" value="Create Group" >
+        </form> 
+        <br>
+        <br>
+      </div>
+      
+    </div>
+    <br>
+    <br>
+    <br>
+    <b><h3><p>Create Group: Create Group() </p><br></h3></b>
+    <b><p>Description:<br><br>
+
+      This section is designed for enabling the moderator to create a new movie watching group which can be filled with members at a later point of time.
+      <br><br>
+      Procedure:<br><br> 
+      1.Moderator will enter an appropriate name (generally non repetitive) as an input.<br><br>
+      2.The creation date column will show a drop down calendar in which the default date will be shown as the current date. But it is customizable for any date.<br><br>
+      3.Upon clicking the “Create Group” button, all the information will be submitted into the database and a group will be created.<br><br>
+      
+      Outcome: <br><br>
+      A group will be created with very minimal information and we will be able to add members into that group.<br>
+      <br>
+      </p></b>
+      <!-- <div class="home-third home-container home-margin-bottom">
+          <img src="/5.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+          <div class="home-container home-white">
+            <p><b>Movie Name</b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Trailer</a></b></p>
+           <p><b><a href="https://www.google.com" target="_blank">Review</a></b></p>
+          </div>
+        </div> -->
+        <!-- <div class="home-third home-container home-margin-bottom">
+          <img src="/6.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+          <div class="home-container home-white">
+            <p><b>Movie Name</b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Trailer</a></b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Review</a></b></p>
+          </div>
+    </div> -->
+  </div>
+
+  <!-- Third Photo Grid-->
+  <div class="home-row-padding">
+    <div class="home-third home-container home-margin-bottom" style="margin-left:100px">
+      <img src="/manage_group.png" alt="Norway" style="width:100%" class="home-hover-opacity">
+      <div class="home-container home-white">
+        <br>
+        <form action="/Manage_group" method="POST" >
+          <label for="Manage_group">Manage Group</label><br><br>
+          <input type="submit" value="Manage Groups" >
+          <br>
+          
+        </form> 
+        <br>
+        <br>
+      </div>
+      
+    </div>
+    
+   
+    <b><h3><p>Show Groups and Add User: Manage Group()  </p></h3></b>
+    <p><b>Description:<br>
+
+      This section is designed for enabling the moderator to add a member into the already existing or a newly created group.<br><br>
+      
+      Procedure: <br>
+      1. Moderator will be able to see the group information. Information such as “Group ID”, “Group Name”, “Group State”, “Creation date” of that group will be displayed in the table form.<br><br>
+      2. Moderator will be able to see the user’s information. A user is not yet a member of any group but is a user of the website. Information such as “First Name”, “Last Name” “Email ID” and “ID” of that user will be displayed in the table form.<br><br>
+      3. Moderator will be able to choose a specific GroupID and a specific MemberID for adding that as a member.<br><br>
+      4. Moderator will input a member id that they want to insert as a member into a selected group.<br><br>
+      5. Moderator will also input a Group ID into the text box in which the corresponding user will be inserted as a member.<br><br>
+      
+      Outcome: <br><br>
+      The selected website user will be inserted as a member of the selected group.<br><br></b>
+      </p>
+      <!-- <div class="home-third home-container home-margin-bottom">
+          <img src="/5.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+          <div class="home-container home-white">
+            <p><b>Movie Name</b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Trailer</a></b></p>
+           <p><b><a href="https://www.google.com" target="_blank">Review</a></b></p>
+          </div>
+        </div> -->
+        <!-- <div class="home-third home-container home-margin-bottom">
+          <img src="/6.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+          <div class="home-container home-white">
+            <p><b>Movie Name</b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Trailer</a></b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Review</a></b></p>
+          </div>
+    </div> -->
+  </div>
+
+
+  <!-- Photo Grid-->
+  <div class="home-row-padding">
+    <div class="home-third home-container home-margin-bottom" style="margin-left:100px">
+      <img src="/create_event.png" alt="Norway" style="width:100%" class="home-hover-opacity">
+      <div class="home-container home-white">
+        <br>
+        <form action="/Create_Event" method="POST" >
+          <label for="fname">Event Name</label><br>
+          <input type="text" id="mweventname" name="mweventname" value="mweventname"><br><br>
+          <label for="birthday"> Open Vote Date</label><br><br>
+          <input type="date" id="openvotedate" name="openvotedate"><br><br>
+          <label for="birthday">Open Close date</label><br><br>
+          <input type="date" id="closevotedate" name="closevotedate"><br><br>
+          <label for="birthday">Movie Date</label><br><br>
+          <input type="date" id="moviedate" name="moviedate"><br><br>
+          <label for="birthday">Movie Event Date</label><br><br>
+          <input type="date" id="mweventdate" name="mweventdate"><br><br>
+      
+          <label for="fname">MW Group ID</label><br><br>
+          <input type="text" id="mwgroupid" name="mwgroupid" value="mwgroupid"><br><br>
+      
+          <br>
+          <input type="submit" value="Create Event" >
+          <br>
+          
+        </form> 
+        <br>
+        <br>
+      </div>
+      
+    </div>
+    <br>
+    <br>
+    <b><h3><p>Create Event: Create Event()  </p></h3></b>
+    
+    <p><b><br><br>Description: <br><br>
+
+      This section is designed for enabling the moderator to create a new movie watching event for an already existing group. All the date fields will give us a drop down calendar which will allow the moderator to choose the dates.<br><br>
+      
+      Procedure: <br><br>
+      1. Moderator will fill in the information in the given fields. First, they will give a name to the event that they will be assigned to the group.<br><br>
+      2. Next, they will fill in the date when the voting is supposed to begin. This date generally can be selected as the date of the creation of the event. A member cannot vote before the voting period has been opened.<br><br>
+      3. They will then fill in the date when the voting is supposed to close. Usually a close vote date will be decided ideally a few days after the open vote date. A user cannot vote after the close vote date has passed.<br><br>
+      4. Inserting movie date will define when the movie will be screened or shown for the patrons of that group.<br><br>
+      5. Movie event date is the date when this event was created. Generally, the voting open date is the same as the open voting period date that we previously mentioned.<br><br>
+      6. Finally we will enter the group id of the group that we are making this event for. We can select the group id out of all the other group ids that are available.<br><br>
+      7. A new page will open which will show the group ids, group names and the corresponding event ids and event names.<br><br>
+      8. You can select which event to look up the information from, which will show all the event details.<br><br>
+      
+      Outcome: <br><br>
+      A new movie watching event will be created with specific dates, open and closed voting dates.<br><br><b></p>
+      <!-- <div class="home-third home-container home-margin-bottom">
+          <img src="/5.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+          <div class="home-container home-white">
+            <p><b>Movie Name</b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Trailer</a></b></p>
+           <p><b><a href="https://www.google.com" target="_blank">Review</a></b></p>
+          </div>
+        </div> -->
+        <!-- <div class="home-third home-container home-margin-bottom">
+          <img src="/6.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+          <div class="home-container home-white">
+            <p><b>Movie Name</b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Trailer</a></b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Review</a></b></p>
+          </div>
+    </div> -->
+  </div>
+
+  <!-- Photo Grid-->
+  <div class="home-row-padding">
+    <div class="home-third home-container home-margin-bottom" style="margin-left:100px">
+      <img src="/populate_movies.png" alt="Norway" style="width:100%" class="home-hover-opacity">
+      <div class="home-container home-white">
+        <br>
+        <form action="/Populate_movies" method="POST" >
+          <label for="Populate_movies">Populate Movies From API</label><br><br>
+          <input type="submit" value="Populate Movies" >
+          <br>
+          
+        </form> 
+      
+        
+        
+      </div>
+      
+    </div>
+    <b><h3><p>Populate Movies: Populate Movies()  </p></h3></b>
+    <p><b>Description:<br>
+
+      This section is designed for enabling the moderator to pull a list of movie information. This will contain attributes like a predefined movie id, movie name, movie’s trailer url links and movie review links.<br><br>
+      
+      Procedure: <br>
+      1. Moderator has to simply press the button of “populate movies” and the control will go back to a python script that will auto populate a list of movies into the database.<br><br>
+      2. The function will also pull the corresponding movie’s trailer links and review links for the moderator and upload that adjacently with the respected movies.<br><br>
+      3. The movie list that has been populated will be shown on the next pages after clicking ‘populate movies’.<br><br>
+      4. The same movie list will also be populated into the vote function for the user of the system so that they can see movie trailers, read movie reviews before voting for a movie or modifying vote for the same movie into another movie. <br><br>
+      
+      Outcome: <br>
+      A new movie list, trailer url list and review url list will be populated into the database and will be displayed on the next webpage.<br><br></b></p>
+      <!-- <div class="home-third home-container home-margin-bottom">
+          <img src="/5.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+          <div class="home-container home-white">
+            <p><b>Movie Name</b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Trailer</a></b></p>
+           <p><b><a href="https://www.google.com" target="_blank">Review</a></b></p>
+          </div>
+        </div> -->
+        <!-- <div class="home-third home-container home-margin-bottom">
+          <img src="/6.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+          <div class="home-container home-white">
+            <p><b>Movie Name</b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Trailer</a></b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Review</a></b></p>
+          </div>
+    </div> -->
+  </div>
+
+  <div class="home-row-padding">
+    <div class="home-third home-container home-margin-bottom" style="margin-left:100px">
+      <img src="/winner.png" alt="Norway" style="width:100%" class="home-hover-opacity">
+      <div class="home-container home-white">
+        <br>
+        <form action="/Winner" method="POST" >
+          <label for="Winner">Winner Display</label><br><br>
+          <input type="submit" value="Winner Display" >
+          <br>
+          
+        </form> 
+      
+        <br>
+        <br>
+      </div>
+      
+    </div>
+    <br>
+    <b><h3><p>Winner Display: Display Winner() </p></h3></b>
+    <p><b><br>Description: <br><br>
+
+      This section is designed for enabling the moderator to display the winning movie with the winning votes for a particular movie watching of a particular movie watching group.<br><br>
+      
+      Procedure: <br>
+      1. Moderator will show all the information by pressing the “Winner Display” button.<br><br>
+      2. The next page will show the First Name and the Last name of the user and the movies that those users have voted for. <br><br>
+      3. Beneath the movie voting details table, we will see all the movies that have received a vote from the voters (members) of that group and the event. It will also show the count of all the votes that a movie received.<br><br>
+      4. At the end of the page, we will see the winning movie that has won the voting provided by all the members that voted in that group.<br><br>
+      
+      Outcome: <br>
+      Upon voting, a movie wins the voting and is displayed by the website. That movie will be eventually screened for the group patrons.<br><br></b>
+      </p>
+      <!-- <div class="home-third home-container home-margin-bottom">
+          <img src="/5.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+          <div class="home-container home-white">
+            <p><b>Movie Name</b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Trailer</a></b></p>
+           <p><b><a href="https://www.google.com" target="_blank">Review</a></b></p>
+          </div>
+        </div> -->
+        <!-- <div class="home-third home-container home-margin-bottom">
+          <img src="/6.jpg" alt="Norway" style="width:100%" class="home-hover-opacity">
+          <div class="home-container home-white">
+            <p><b>Movie Name</b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Trailer</a></b></p>
+            <p><b><a href="https://www.google.com" target="_blank">Review</a></b></p>
+          </div>
+    </div> -->
+  </div>
+
+  </div>
+
+
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function home_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function home_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+</body>
+</html>

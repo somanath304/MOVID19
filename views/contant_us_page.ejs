@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<title>Contact Us Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="ContactUs.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+</style>
+<body class="home-light-bluish home-content home-background" style="max-width:1600px" background="/background.jpg">
+
+<!-- Sidebar/menu -->
+<nav class="home-sidebar home-collapse home-custom home-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="home-container"> 
+    <a href="#" onclick="home_close()" class="home-hide-large home-right home-jumbo home-padding home-hover-grey" title="close menu">
+      <i class="fa fa-remove"></i>
+    </a>
+    <img src="/man.png" style="width:45%;" class="home-round"><br><br>
+    <h4><b>Profile</b></h4>
+    <p class="home-text-grey"></p>
+  </div>
+  <div class="home-bar-block">
+    <a href="#about" onclick="home_close()" class="home-bar-item home-button home-padding"><i class="fa fa-user fa-fw home-margin-right"></i>Change Password</a> 
+    <a href="#contact" onclick="home_close()" class="home-bar-item home-button home-padding"><i class="fa fa-envelope fa-fw home-margin-right"></i>Contact Us</a>
+</div>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="home-overlay home-hide-large home-animate-opacity" onclick="home_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="home-main" style="margin-left:300px">
+
+  <!-- Header -->
+  <header id="portfolio">
+    <a href="#"><img src="../assets/Profile.png" style="width:65px;" class="home-circle home-right home-margin home-hide-large home-hover-opacity"></a>
+    <span class="home-button home-hide-large home-xxlarge home-hover-text-grey" onclick="home_open()"><i class="fa fa-bars"></i></span>
+    <div class="home-container">
+    <h1><b>Home</b></h1>
+    <div class="home-section home-bottombar home-padding-16">
+      <span class="home-margin-right"></span> 
+     
+    </div>
+    </div>
+  </header>
+
+  <!-- About -->
+  <div class="about-row-padding">
+    <h2>Contact Us</h2>
+    <h3 class="namename">Nopphiphat Suraminitkul:</h3>
+    <p>Software Aficionado, Library lover, International Student Ambassador and a charming ladies man, he’s the mind and soul of the requirement phase of our project.  Working day and night on gathering the requirements for the project and taking control of the framework with his engaging class diagrams and state diagrams, he moderated our weekly meetings, agendas and showed us the right direction along with setting a vision for our project.</p>
+    <p>Contact Nopphiphat at nopphiphat0305@gwmail.gwu.edu</p>
+    <h3 class="namename">Somanath Jogelkar:</h3>
+    <p>Web designer, website guru, layout designer and now an emerging Node js expert, he brings tons of experience in designing and implementing the backend of the website which connects the front end with the database. Don’t be fooled by his handsome looks, he can take a big challenge and lead a team of novices to complete a professional project that everyone can be proud of at the end of the semester. Helping us with the sequence diagrams and with the content of our use cases, he had his eyes set on a successful implementation of the website, and we bowed our heads down to his dedication towards his teammates and this project.</p>
+    <p>Contact Somanath at som22@gwu.edu</p>
+    <h3 class="namename">Juhi Sinha:</h3>
+    <p>Stealthy, pretty and an avid observer of detail, she hails from the tech capital of India and brings years of experience with her to this team and this project. Her beautiful and observing eyes not only helped us pinpoint the issues and problems with our diagrams and presentations but also helped us to rectify those mistakes. She shares the responsibility for creating use case diagrams, traceability matrix and sequence diagrams and excels in developing beautiful front end pages for our project that keeps the user’s eyes fixated on our website’s aesthetics. </p>
+    <p>Contact Juhi at juhi_sinha@gwmail.gwu.edu</p>
+    <h3 class="namename">Ayush Singh:</h3>
+    <p>The weakest link in the group of highly professional and utterly experienced team members, he comes from one of the most polluted cities in India. He prides himself on understanding a lot of what is going on but doesn’t have a clue. Amid all of the ignorant ideas that he has, he still managed to pull off a normalized database that was used to store data for this project. Honestly, we didn’t even expect him to complete that in the first place, LOL!</p>
+    <p>Contact Ayush at ayushsingh@gwu.edu</p>
+  </div>
+
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function home_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function home_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+</body>
+</html>
